@@ -41,7 +41,7 @@ $taches = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <?php foreach (['simple' => 'Tâches Simples', 'complexe' => 'Tâches Complexes', 'recurente' => 'Tâches Récurrentes'] as $type => $titre): ?>
         <div class="bg-white p-4 rounded-lg shadow-md">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2"><?php echo $titre; ?></h3>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2"><?= $titre; ?></h3>
           <ul class="space-y-2">
             <?php foreach ($taches as $tache): ?>
               <?php if ($tache['type'] === $type): ?>

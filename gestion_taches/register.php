@@ -12,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
 
   try {
-    $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, email, mot_de_passe) VALUES (:nom, :email, :mot_de_passe)");
+    // $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, email, mot_de_passe) VALUES (:nom, :email, :mot_de_passe)");
+    $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, email, mot_de_passe, role) VALUES (:nom, :email, :mot_de_passe, 'admin')");
     $stmt->execute(['nom' => $nom, 'email' => $email, 'mot_de_passe' => $mot_de_passe]);
     header('Location: login.php');
     exit;

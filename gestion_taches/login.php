@@ -3,8 +3,8 @@ require 'config.php';
 
 if (isLoggedIn()) {
   header('Location: index.php');
-  exit;
-}
+  exit();
+} 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];

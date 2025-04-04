@@ -13,8 +13,7 @@ try {
   die("Erreur de connexion : " . $e->getMessage());
 }
 
-function isLoggedIn()
-{
+function isLoggedIn(){
   return isset($_SESSION['user_id']);
 }
 
