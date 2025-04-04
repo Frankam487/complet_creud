@@ -2,7 +2,7 @@
 require 'config.php';
 
 if (!isLoggedIn()) {
-  header('Location: login.php');
+  header('Location: bb.php');
   exit;
 }
 
@@ -53,10 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <main class="container mx-auto mt-8">
     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Mon Profil</h2>
     <div class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-6">
-      <img src="<?php echo $user['image_profil']; ?>" alt="Profil" class="w-24 h-24 rounded-full object-cover">
+      <img src="<?= $user['image_profil']; ?>" alt="Profil" class="w-24 h-24 rounded-full object-cover">
       <form method="POST" enctype="multipart/form-data" class="flex-1">
-        <input type="text" name="nom" value="<?php echo htmlspecialchars($user['nom']); ?>" class="w-full p-2 mb-4 border rounded" required>
-        <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" class="w-full p-2 mb-4 border rounded" required>
+        <input type="text" name="nom" value="<?= htmlspecialchars($user['nom']); ?>" class="w-full p-2 mb-4 border rounded" required>
+        <input type="email" name="email" value="<?= htmlspecialchars($user['email']); ?>" class="w-full p-2 mb-4 border rounded" required>
         <input type="file" name="image" class="w-full p-2 mb-4 border rounded">
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Mettre à jour</button>
       </form>
