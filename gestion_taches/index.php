@@ -1,10 +1,10 @@
 <?php
 require 'config.php';
 
-if (!isLoggedIn()) {
-  header('Location: login.php');
-  exit;
-}
+// if (!isLoggedIn()) {
+//   header('Location: login.php');
+//   exit;
+// }
 
 $query = isAdmin() ? "SELECT t.*, u.nom FROM taches t LEFT JOIN utilisateurs u ON t.utilisateur_id = u.id ORDER BY t.date_creation DESC" :
   "SELECT * FROM taches WHERE utilisateur_id = :user_id ORDER BY date_creation DESC";

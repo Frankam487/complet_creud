@@ -2,7 +2,7 @@
 require 'config.php';
 
 if (!isLoggedIn()) {
-  header('Location: bb.php');
+  header('Location: index.php');
   exit;
 }
 

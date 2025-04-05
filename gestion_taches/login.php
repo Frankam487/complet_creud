@@ -2,11 +2,11 @@
 require 'config.php';
 
 if (isLoggedIn()) {
-  header('Location: bb.php');
-  exit();
-} 
+  header('Location: index.php');
+  exit;
+}
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];
   $mot_de_passe = $_POST['mot_de_passe'];
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
     <h2 class="text-2xl font-semibold text-gray-800 mb-6">Connexion</h2>
     <?php if (isset($error)): ?>
-      <p class="text-red-500 mb-4"><?php echo $error; ?></p>
+      <p class="text-red-500 mb-4"><?= $error; ?></p>
     <?php endif; ?>
     <form method="POST">
       <input type="email" name="email" placeholder="Email" class="w-full p-2 mb-4 border rounded" required>
